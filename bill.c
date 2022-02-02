@@ -38,12 +38,24 @@ int main()
 	i++;
     }while( choice != 'q' );
 
-      print_bill( bill, name, i );
+    print_bill( bill, name, i );
+    char choice1;
+    printf("Do you want to save? [y/n]\n");
+    getchar();
+    scanf("%c", &choice1);
+    if ( choice1 == 'y' )
+    {
+	freopen("output.txt", "w", stdout);  //save data to file
+	print_bill( bill, name, i );
+	freopen( "/dev/tty", "w",stdout );
+	printf("saved successfully\n");
+    }
 
 }
 
-void print_bill( bill_info *bill, char *name, int limit )
+void print_bill( bill_info *bill, char *name, int limit )  //function for printing bill
 {
+
     printf("-----------------------%s----------------------------\n",rest_name);  //rest_name is a macro
     printf("Date          : %s\n",__DATE__);  //print data
     printf("Customer Name : %s\n", name);  //print data
@@ -71,4 +83,5 @@ void print_bill( bill_info *bill, char *name, int limit )
     printf("-----------------------------------------------------------------------\n");
     printf("Grand Total \t\t\t \t \t %g\n", total + c_gst + s_gst );
     printf("-----------------------------------------------------------------------\n");
+
 }
