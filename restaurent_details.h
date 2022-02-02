@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #define rest_name "Cafe Moon Restaurant"
 #define discount  10.0
