@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define rest_name "Cafe Moon Restaurant"
-#define discout  10
-#define cgst 9
-#define sgst 9
+#define discount  10.0
+#define cgst 9.0
+#define sgst 9.0
 
